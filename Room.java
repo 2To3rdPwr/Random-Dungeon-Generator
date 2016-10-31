@@ -1,6 +1,5 @@
 package rdg;
 import java.util.ArrayList;
-import java.util.Random;
 /**
  *
  * @author Jake

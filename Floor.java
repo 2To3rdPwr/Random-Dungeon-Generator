@@ -2,7 +2,7 @@ package rdg;
 import java.util.ArrayList;
 import java.util.Random;
 /**
- *
+ *  
  * @author Jake
  */
 public class Floor 
@@ -26,6 +26,7 @@ public class Floor
             for(int y = 0; y < yMax; y++)
             {
                 map.get(x).add(new Tile());
+                map.get(x).get(y).setCoords(x, y);
             }
         }
         
@@ -35,6 +36,7 @@ public class Floor
         Tile p = new Tile(rand.nextInt(xMax - 2 * size) + size + 1, rand.nextInt(yMax - 2 * size) + size + 1);
         
         genRoom(size, p, rand.nextInt(4) + 1);
+        clean();
         clean();
     }
     
@@ -245,7 +247,10 @@ public class Floor
         {
             for(int y = 0; y < yMax; y++)
             {
-                System.out.print(map.get(x).get(y).getType());
+                if(map.get(x).get(y).mob != null)
+                    System.out.print('@');
+                else
+                    System.out.print(map.get(x).get(y).getType());
             }
             System.out.println();
         }

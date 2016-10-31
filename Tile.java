@@ -8,8 +8,8 @@ package rdg;
 public class Tile 
 {
     private char type;
-    private Pather mob;
-    public int x, y, pathVal = 500;
+    public Pather mob;
+    public int x, y;
     /**
      * Tile constructor
      * creates a new tile with a default type //and NULL entity
@@ -30,12 +30,6 @@ public class Tile
         this.x = x;
         this.y = y;
         mob = null;
-    }
-    Tile(int x, int y, int pathval)
-    {
-        this.x = x;
-        this.y = y;
-        this.pathVal = pathval;                
     }
     
     char getType()
